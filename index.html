@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PakBudget.AI</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>PakBudget AI</title>
 </head>
 <body>
-<div class="container">
-  <h2>💰 PakBudget AI</h2>
-  <input type="text" id="n" placeholder="Expense Name">
-  <input type="number" id="a" placeholder="Amount Rs">
-  <button onclick="add()">Add Expense</button>
-  <h3>Total: Rs <span id="t">0</span></h3>
+  <h1>💰 PakBudget AI</h1>
+  <p>Apna Monthly Budget Track Karein</p>
+
+  <input id="n" placeholder="Expense Name">
+  <input id="a" placeholder="Amount Rs" type="number">
+  <button onclick="add()">➕ Add Expense</button>
+
+  <p>Total: Rs <span id="t">0</span></p>
+  <ul id="l"></ul>
   <button onclick="tips()">📊 Get AI Tips</button>
-  <div id="l"></div>
+
 <script>
 let total = 0;
 let expenses = [];
@@ -52,6 +53,5 @@ function tips(){
   else tipBox.innerHTML = "<b>AI Tip:</b> Budget theek hai, aise hi chalate rahen 👍";
 }
 </script>
-
 </body>
 </html>
