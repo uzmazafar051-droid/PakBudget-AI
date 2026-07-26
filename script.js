@@ -1,7 +1,6 @@
 // Load saved data
-let expenses = JSON.parse(localStorage.getItem('pakbudget-expenses')) || [];let total = 0;
-let list = [];
-
+let list = JSON.parse(localStorage.getItem('pakbudget-expenses')) || [];
+let total = 0;
 function add() {
   let name = document.getElementById('n').value;
   let amount = parseFloat(document.getElementById('a').value);
