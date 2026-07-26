@@ -1,4 +1,5 @@
-let total = 0;
+// Load saved data
+let expenses = JSON.parse(localStorage.getItem('pakbudget-expenses')) || [];let total = 0;
 let list = [];
 
 function add() {
@@ -13,7 +14,7 @@ function add() {
   list.push({name, amount});
   total += amount;
   document.getElementById('t').innerText = total;
-  
+  localStorage.setItem('pakbudget-expenses', JSON.stringify(list));
   let l = document.getElementById('l');
   l.innerHTML += `<p>${name}: Rs ${amount}</p>`;
   
