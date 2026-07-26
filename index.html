@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PakBudget AI</title>
+<meta charset="UTF-8">
+<title>PakBudget AI</title>
 </head>
 <body>
-  <h1>💰 PakBudget AI</h1>
-  <p>Apna Monthly Budget Track Karein</p>
+<h1>💰 PakBudget AI</h1>
+<p>Apna Monthly Budget Track Karein</p>
 
-  <input id="n" placeholder="Expense Name">
-  <input id="a" placeholder="Amount Rs" type="number">
-  <button onclick="add()">➕ Add Expense</button>
+<input id="n" placeholder="Expense Name">
+<input id="a" placeholder="Amount Rs" type="number">
+<button onclick="add()">➕ Add Expense</button>
 
-  <p>Total: Rs <span id="t">0</span></p>
-Line 16: <ul id="l"></ul>
-Line 17: <button onclick="tips()">📊 Get AI Tips</button>
-Line 18: <p id="tip"></p>  <!-- YE NAYI LINE -->  
-  
+<p>Total: Rs <span id="t">0</span></p>
+<ul id="l"></ul>
+<button onclick="tips()">📊 Get AI Tips</button>
+<p id="tip"></p>
 
 <script>
 let total = 0;
@@ -25,8 +24,8 @@ let expenses = [];
 function add(){
   let n = document.getElementById('n').value;
   let a = parseFloat(document.getElementById('a').value);
-  if(n=='' || isNaN(a)) return;
-  expenses.push({name:n, amount:a});
+  if(n==='' || isNaN(a)) return;
+  expenses.push({name: n, amount: a});
   total += a;
   document.getElementById('t').innerText = total;
   renderExpenses();
@@ -44,15 +43,15 @@ function renderExpenses(){
 
 function deleteExpense(index){
   total -= expenses[index].amount;
-  expenses.splice(index,1);
+  expenses.splice(index, 1);
   document.getElementById('t').innerText = total;
   renderExpenses();
 }
 
 function tips(){
-let tipBox = document.getElementById('tip');  
-  if(total > 10000) tipBox.innerHTML = "<b>AI Tip:</b> Kharchay zyada hain, thora control karein 💡";
-  else tipBox.innerHTML = "<b>AI Tip:</b> Budget theek hai, aise hi chalate rahen 👍";
+  let tipBox = document.getElementById('tip');
+  if(total > 10000) tipBox.innerHTML = '<b>AI Tip:</b> Kharchay zyada hain, thora control karein 💡';
+  else tipBox.innerHTML = '<b>AI Tip:</b> Budget theek hai, aise hi chalatay rahen 👍';
 }
 </script>
 </body>
