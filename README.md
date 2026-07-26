@@ -6,7 +6,8 @@
 **For Whom:** Ghar chalane wali khawateen, students, aur middle-class families jo apne kharchay control karna chahti hain.
 
 ## b. Live Deployed URL
-[https://PASTE_YOUR_VERCEL_LINK_HERE](https://PASTE_YOUR_VERCEL_LINK_HERE)
+## b. Live Deployed URL
+https://pak-budget-ai-k4b7.vercel.app
 
 ## c. Features List
 - **Add Expense**: Expense ka naam aur amount add karo
