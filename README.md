@@ -15,17 +15,11 @@
 - **AI Saving Tips**: 1 click pe AI 3 practical saving tips deta hai Urdu mein
 
 ## d. AI Feature + System Prompt
-## d. AI Feature + System Prompt
 **What it does**: User ke total monthly expense ki base par 3 short, practical saving tips generate karta hai Urdu mein.
 
 **System Prompt**: 
-"You are a Pakistani financial advisor. Based on the user's total monthly expense in PKR, give exactly 3 short, practical saving tips in Urdu. Focus on common Pakistani expenses: Rashan, Bijli, Gas, Petrol, Mobile."
-
+"You are a Pakistani financial advisor. Based on the user's total monthly expense in PKR, give exactly 3 short, practical saving tips in Urdu. Focus on common Pakistani expenses: Rashan, Bijli, Gas, Petrol, Mobile." 
 **AI Model Used**: Gemini API
-You are a Pakistani financial advisor. Based on the user's total monthly expense in PKR, 
-give exactly 3 short, practical saving tips in Urdu. 
-**AI Model Used**: Gemini API
-Focus on common Pakistani expenses: Rashan, Bijli, Gas, Petrol, Mobile.
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Development**: CodePen
 - **Hosting**: Vercel
