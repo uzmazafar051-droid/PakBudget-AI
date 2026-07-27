@@ -4,10 +4,8 @@
 **PakBudget AI** - Ghar ke monthly kharchay track karne wali web app.  
 **Problem:** Pakistan mein zyada tar ghar walay end of month tak nahi jante paise kahan kharch hue. Is se budget kharab ho jata hai.  
 **For Whom:** Ghar chalane wali khawateen, students, aur middle-class families jo apne kharchay control karna chahti hain.
-
 ## b. Live Deployed URL
-## b. Live Deployed URL
-https://pak-budget-ai-k4b7.vercel.app
+👉 **https://pak-budget-ai-k4b7.vercel.app**
 
 ## c. Features List
 - **Add Expense**: Expense ka naam aur amount add karo
@@ -17,21 +15,24 @@ https://pak-budget-ai-k4b7.vercel.app
 - **AI Saving Tips**: 1 click pe AI 3 practical saving tips deta hai Urdu mein
 
 ## d. AI Feature + System Prompt
-**What it does:** User ke total monthly expense ki base par 3 short, practical saving tips generate karta hai.  
-**Instructions/System Prompt:**
-## e. Tools & Tech Used
+## d. AI Feature + System Prompt
+**What it does**: User ke total monthly expense ki base par 3 short, practical saving tips generate karta hai Urdu mein.
+
+**System Prompt**: 
+"You are a Pakistani financial advisor. Based on the user's total monthly expense in PKR, give exactly 3 short, practical saving tips in Urdu. Focus on common Pakistani expenses: Rashan, Bijli, Gas, Petrol, Mobile."
+
+**AI Model Used**: Gemini API
 You are a Pakistani financial advisor. Based on the user's total monthly expense in PKR, 
 give exactly 3 short, practical saving tips in Urdu. 
+**AI Model Used**: Gemini API
 Focus on common Pakistani expenses: Rashan, Bijli, Gas, Petrol, Mobile.
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Development**: CodePen
 - **Hosting**: Vercel
 - **Version Control**: GitHub
-
-## f. Screenshots
-![Screenshot 1 - Khali App](Screenshot%201.png)
-![Screenshot 2 - Expenses + Total](Screenshot%202.png)
-![Screenshot 3 - AI Tips](Screenshot%203%20Png)
+![Screenshot 1 - Khali App](screenshot1.png)
+![Screenshot 2 - Expenses + Total](screenshot2.png)
+![Screenshot 3 - AI Tips](screenshot3.png)
 
 ## g. How to Run
 1. `git clone https://github.com/uzmazafer051-droid/PakBudget-AI`
