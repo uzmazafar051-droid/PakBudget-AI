@@ -29,6 +29,6 @@
 ![Screenshot 3 - AI Tips](screenshot3.png)
 
 ## g. How to Run
-1. `git clone https://github.com/uzmazafer051-droid/PakBudget-AI`
+1. `git clone https://github.com/uzmazafar051-droid/PakBudget-AI`
 2. Folder open karo
 3. `index.html` ko browser mein double click karke chalao
