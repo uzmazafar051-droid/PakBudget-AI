@@ -24,10 +24,11 @@
 - **Development**: CodePen
 - **Hosting**: Vercel
 - **Version Control**: GitHub
-![Screenshot 1 - Khali App](screenshot1.png)
-![Screenshot 2 - Expenses + Total](screenshot2.png)
-![Screenshot 3 - AI Tips](screenshot3.png)
+### f. Screenshots
 
+![Screenshot 1 - Khali App](Screenshot%201.png)
+![Screenshot 2 - Expenses + Total](Screenshot%202.png)
+![Screenshot 3 - AI Tips](Screenshot%203.png)
 ## g. How to Run
 1. `git clone https://github.com/uzmazafar051-droid/PakBudget-AI`
 2. Folder open karo
