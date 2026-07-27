@@ -2,56 +2,108 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>PakBudget AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PakBudget AI 💚</title>
+<style>
+    body { font-family: Arial; background: #f0f4f8; padding: 20px; display: flex; justify-content: center; }
+    .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 100%; max-width: 500px; }
+    h1 { color: #28a745; }
+    input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #28a745; color: white; border: none; cursor: pointer; font-weight: bold; }
+    button:hover { background: #218838; }
+    ul { list-style: none; padding: 0; }
+    li { background: #e9f5ff; margin: 5px 0; padding: 8px; border-radius: 5px; display: flex; justify-content: space-between; }
+    .delete-btn { background: red; color: white; border: none; padding: 2px 8px; cursor: pointer; border-radius: 3px; }
+    #aiTips { background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px; }
+</style>
 </head>
 <body>
-<h1>💰 PakBudget AI</h1>
-<p>Apna Monthly Budget Track Karein</p>
+<div class="container">
+    <h1>💰 PakBudget AI</h1>
+    <p>Apna Monthly Budget Track Karein</p>
+    
+    <input type="text" id="expenseName" placeholder="Expense Name">
+    <input type="number" id="expenseAmount" placeholder="Amount Rs">
+    <button onclick="addExpense()">+ Add Expense</button>
 
-<input id="n" placeholder="Expense Name">
-<input id="a" placeholder="Amount Rs" type="number">
-<button onclick="add()">➕ Add Expense</button>
+    <h3>Total: Rs <span id="total">0</span></h3>
+    <ul id="expenseList"></ul>
 
-<p>Total: Rs <span id="t">0</span></p>
-<ul id="l"></ul>
-<button onclick="tips()">📊 Get AI Tips</button>
-<p id="tip"></p>
+    <button onclick="getAITips()">📊 Get AI Tips</button>
+    <div id="aiTips"></div>
+</div>
 
 <script>
-let total = 0;
 let expenses = [];
 
-function add(){
-  let n = document.getElementById('n').value;
-  let a = parseFloat(document.getElementById('a').value);
-  if(n==='' || isNaN(a)) return;
-  expenses.push({name: n, amount: a});
-  total += a;
-  document.getElementById('t').innerText = total;
-  renderExpenses();
-  document.getElementById('n').value = '';
-  document.getElementById('a').value = '';
+// Page load hote hi saved data lao
+window.onload = function() {
+    const saved = localStorage.getItem('pakbudget_expenses');
+    if(saved) {
+        expenses = JSON.parse(saved);
+        displayExpenses();
+    }
 }
 
-function renderExpenses(){
-  let l = document.getElementById('l');
-  l.innerHTML = '';
-  expenses.forEach((exp, i) => {
-    l.innerHTML += `<li>${exp.name}: Rs ${exp.amount} <button onclick="deleteExpense(${i})">❌</button></li>`;
-  })
+// Data save karne ka function
+function saveData() {
+    localStorage.setItem('pakbudget_expenses', JSON.stringify(expenses));
 }
 
-function deleteExpense(index){
-  total -= expenses[index].amount;
-  expenses.splice(index, 1);
-  document.getElementById('t').innerText = total;
-  renderExpenses();
+function addExpense() {
+    const name = document.getElementById('expenseName').value;
+    const amount = parseFloat(document.getElementById('expenseAmount').value);
+    
+    if(name === '' || isNaN(amount)) {
+        alert('Please enter name and amount');
+        return;
+    }
+    
+    expenses.push({name, amount});
+    saveData(); // SAVE KAR DIYA
+    displayExpenses();
+    
+    document.getElementById('expenseName').value = '';
+    document.getElementById('expenseAmount').value = '';
 }
 
-function tips(){
-  let tipBox = document.getElementById('tip');
-  if(total > 10000) tipBox.innerHTML = '<b>AI Tip:</b> Kharchay zyada hain, thora control karein 💡';
-  else tipBox.innerHTML = '<b>AI Tip:</b> Budget theek hai, aise hi chalatay rahen 👍';
+function deleteExpense(index) {
+    expenses.splice(index, 1);
+    saveData(); // SAVE KAR DIYA
+    displayExpenses();
+}
+
+function displayExpenses() {
+    const list = document.getElementById('expenseList');
+    const totalEl = document.getElementById('total');
+    list.innerHTML = '';
+    let total = 0;
+    
+    expenses.forEach((exp, index) => {
+        total += exp.amount;
+        list.innerHTML += `<li>${exp.name}: Rs ${exp.amount} <button class="delete-btn" onclick="deleteExpense(${index})">X</button></li>`;
+    });
+    
+    totalEl.innerText = total;
+}
+
+function getAITips() {
+    const aiDiv = document.getElementById('aiTips');
+    if(expenses.length === 0) {
+        aiDiv.innerHTML = 'Pehle kuch expenses add karein';
+        return;
+    }
+    
+    // Yahan tumhara AI API call hoga
+    // Filhal demo tips
+    aiDiv.innerHTML = `
+    <b>🤖 AI Tips:</b><br>
+    1. Rashan ek saath lein, rozana kharidari se bachein<br>
+    2. LED bulb use karein bijli bachane ke liye<br>
+    3. Har month 10% saving zaroor karein
+    `;
+    
+    // ASLI AI KE LIYE: Yahan tumhara Gemini/OpenAI ka code lagega
 }
 </script>
 </body>
